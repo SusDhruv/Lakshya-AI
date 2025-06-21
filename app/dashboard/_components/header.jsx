@@ -1,4 +1,5 @@
 "use client"
+import { Button } from '@/components/ui/button'
 import { UserButton } from '@clerk/nextjs'
 import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
