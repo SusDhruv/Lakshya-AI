@@ -1,4 +1,4 @@
-import { pgTable, serial, varchar, json, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, serial, varchar, json, timestamp, numeric, text } from "drizzle-orm/pg-core";
 
 export const Lakshya_Data = pgTable("mockInt", {
   id: serial("id").primaryKey(),
@@ -10,3 +10,15 @@ export const Lakshya_Data = pgTable("mockInt", {
   createdBy: varchar("createdBy", { length: 255 }).notNull(),
   mockId: varchar("mockId", { length: 255 }).notNull(),
 });
+
+export const UserAnswer = pgTable('userAnswer',{
+  id: serial("id").primaryKey(),
+  MockIdRef: varchar("mockId", { length: 255 }).notNull(),
+  Question: varchar ('Question').notNull(),
+  CorrectAnswer: text('CorrectAnswer'),
+  UserAnswer: text('userAnswer'),
+  Feedback: text('Feedback'),
+  Rating: varchar('Rating'),
+  userEmail: varchar('userEmail'),
+  createdAt: varchar('createdAt'),
+})

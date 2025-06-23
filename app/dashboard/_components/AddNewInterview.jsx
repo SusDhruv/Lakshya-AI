@@ -92,10 +92,15 @@ function AddNewInterview() {
   return (
     <div>
       <div
-        className="p-10 border rounded-lg bg-secondary hover:scale-105 hover:shadow-md cursor-pointer transition-all"
+        className="flex flex-col items-center justify-center w-full max-w-xs mx-auto p-8 border border-gray-200 rounded-xl bg-white shadow-sm transition-all duration-200 cursor-pointer hover:shadow-lg hover:bg-gray-50 group"
         onClick={() => setOpenDialog(true)}
       >
-        <h2 className="text-2xl  text-center">Add New</h2>
+        <span className="flex items-center gap-2 text-lg text-gray-700 group-hover:text-primary transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 text-gray-400 group-hover:text-primary">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+          </svg>
+          Add New
+        </span>
       </div>
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>
         <DialogContent className="max-w-2xl">

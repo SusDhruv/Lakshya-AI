@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { UserButton } from '@clerk/nextjs'
 import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
+import Link from 'next/link'
 
 function Header() {
     const pathname = usePathname();
@@ -18,7 +19,7 @@ function Header() {
                         pathname === '/dashboard' ? 'text-primary font-bold' : ''
                     }`}
                 >
-                    Dashboard
+                    <Link href="/dashboard">Dashboard</Link>
                 </li>
                 <li
                     className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${
@@ -29,17 +30,17 @@ function Header() {
                 </li>
                 <li
                     className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${
-                        pathname === '/upgrade' ? 'text-primary font-bold' : ''
+                        pathname === '/dashboard/upgrade' ? 'text-primary font-bold' : ''
                     }`}
                 >
-                    Upgrade
+                    <Link href="/dashboard/upgrade">Upgrade</Link>
                 </li>
                 <li
                     className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${
                         pathname === '/how-it-works' ? 'text-primary font-bold' : ''
                     }`}
                 >
-                    How it Works
+                    <Link href="/dashboard/how-it-works">How it Works</Link>
                 </li>
             </ul>
             <UserButton/>

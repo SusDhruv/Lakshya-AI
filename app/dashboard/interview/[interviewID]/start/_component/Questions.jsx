@@ -18,9 +18,7 @@ function speakText(text) {
   }
 }
 
-function Questions({mockInterviewQuestions}) {
-  const [selectedQuestion, setSelectedQuestion] = useState(null);
-
+function Questions({mockInterviewQuestions, answers = [], setActiveQuestionIndex, activeQuestionIndex}) {
   return (
     <div className='w-[400px] bg-gradient-to-b from-gray-50 to-white'>
       {/* Questions List */}
@@ -36,21 +34,25 @@ function Questions({mockInterviewQuestions}) {
                 <Button
                   variant="outline"
                   className={`group py-2 px-3 text-left h-auto w-full transition-all duration-200 hover:shadow-md
-                    ${selectedQuestion === idx 
+                    ${activeQuestionIndex === idx 
                       ? 'border-blue-500 bg-gradient-to-r from-blue-50 to-white shadow-inner' 
-                      : 'hover:border-gray-300 hover:bg-white'}`}
-                  onClick={() => setSelectedQuestion(idx)}
+                      : 'hover:border-gray-300 hover:bg-white'}
+                    ${answers[idx]?.answer ? 'ring-2 ring-green-400' : ''}`}
+                  onClick={() => setActiveQuestionIndex(idx)}
                 >
                   <div className='flex items-center gap-2'>
                     <span className={`flex items-center justify-center w-6 h-6 rounded-full text-sm font-medium
-                      ${selectedQuestion === idx 
+                      ${activeQuestionIndex === idx 
                         ? 'bg-blue-500 text-white' 
-                        : 'bg-gray-100 text-gray-600 group-hover:bg-gray-200'}`}>
+                        : answers[idx]?.answer 
+                          ? 'bg-green-500 text-white' 
+                          : 'bg-gray-100 text-gray-600 group-hover:bg-gray-200'}`}>
                       {idx + 1}
                     </span>
-                    <span className={`font-medium ${selectedQuestion === idx ? 'text-blue-600' : 'text-gray-700'}`}>
+                    <span className={`font-medium ${activeQuestionIndex === idx ? 'text-blue-600' : 'text-gray-700'}`}>
                       Question {idx + 1}
                     </span>
+                    {answers[idx]?.answer && <span className="ml-2 text-green-600 text-xs font-semibold">Answered</span>}
                   </div>
                 </Button>
                 {/* TTS Button for each question */}
@@ -78,14 +80,14 @@ function Questions({mockInterviewQuestions}) {
 
       {/* Selected Question Display Below */}
       <div className='p-6'>
-        {selectedQuestion !== null && mockInterviewQuestions[selectedQuestion] && (
+        {mockInterviewQuestions[activeQuestionIndex] && (
           <div className='p-6 border border-gray-200 rounded-xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl'>
             <div className='flex items-center gap-3 mb-4'>
               <span className='flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white font-medium'>
-                {selectedQuestion + 1}
+                {activeQuestionIndex + 1}
               </span>
               <h2 className='text-lg font-semibold text-gray-800'>
-                Question {selectedQuestion + 1}
+                Question {activeQuestionIndex + 1}
               </h2>
               {/* TTS Button for selected question */}
               <button
@@ -93,7 +95,7 @@ function Questions({mockInterviewQuestions}) {
                 className="ml-2 p-2 rounded hover:bg-blue-100 text-blue-600"
                 aria-label="Read question aloud"
                 onClick={() => {
-                  const q = mockInterviewQuestions[selectedQuestion];
+                  const q = mockInterviewQuestions[activeQuestionIndex];
                   const questionText = q?.question || (typeof q === 'string' ? q : '');
                   speakText(questionText);
                 }}
@@ -102,9 +104,9 @@ function Questions({mockInterviewQuestions}) {
               </button>
             </div>
             <p className='text-gray-700 text-base leading-relaxed pl-11'>
-              {mockInterviewQuestions[selectedQuestion]?.question || 
-               (typeof mockInterviewQuestions[selectedQuestion] === 'string' 
-                 ? mockInterviewQuestions[selectedQuestion] 
+              {mockInterviewQuestions[activeQuestionIndex]?.question || 
+               (typeof mockInterviewQuestions[activeQuestionIndex] === 'string' 
+                 ? mockInterviewQuestions[activeQuestionIndex] 
                  : 'Question format not recognized')}
             </p>
           </div>

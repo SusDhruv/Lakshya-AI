@@ -15,7 +15,7 @@ export default function Page() {
         <p className="text-gray-500 dark:text-gray-300 mb-6 text-center">
           Sign in to your account to continue
         </p>
-        <SignIn />
+        <SignIn redirectUrl="/dashboard" />
       </div>
     </div>
   )

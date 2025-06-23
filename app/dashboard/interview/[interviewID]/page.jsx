@@ -76,36 +76,16 @@ function Interview() {
 
         {/* Webcam Section - Right Side */}
         <div className="flex-shrink-0 ml-auto flex flex-col justify-start">
-          {webcamEnabled ? (
-            <Webcam
-              onUserMedia={()=>setWebcamEnabled(true)}
-              onUserMediaError={()=>setWebcamEnabled(false)}
-              mirrored={true}
-              style={{
-                height: '450px',
-                width: '450px',
-                minHeight: '450px',
-                minWidth: '450px',
-              }}
-            />
-          ) : (
-            <div className="flex flex-col items-center justify-center">
-              <div className="w-[450px] h-[450px] p-8 bg-black rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center">
-                <WebcamIcon className="w-32 h-32 text-gray-400"/>
-              </div>
-              <div className="flex gap-3 mt-3">
-                <Button 
-                  onClick={()=>setWebcamEnabled(true)} 
-                  className="text-sm px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg shadow-lg transition-all duration-200 font-medium"
-                >
-                  Enable Webcam and Microphone
-                </Button>
-                <Link href ={`/dashboard/interview/${interviewID}/start`}>
+          <div className="flex flex-col items-center justify-center">
+            <div className="w-[450px] h-[450px] p-8 bg-black rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center">
+              <WebcamIcon className="w-32 h-32 text-gray-400"/>
+            </div>
+            <div className="flex gap-3 mt-3">
+              <Link href ={`/dashboard/interview/${interviewID}/start`}>
                 <Button className="text-sm px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg shadow-lg transition-all duration-200 font-medium" >Start Interview</Button>
-                </Link>
-              </div>
-            </div>  
-          )}
+              </Link>
+            </div>
+          </div>  
         </div>
       </div>
     </div>
