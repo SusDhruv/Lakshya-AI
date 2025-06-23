@@ -9,8 +9,9 @@ import { WebcamIcon } from "lucide-react";
 import Webcam from "react-webcam";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import Link from "next/link";
 function Interview() {
-  const { interviewID } = useParams();
+  const { interviewID } = useParams();    
   const [interviewData, setInterviewData] = useState();
   const [webcamEnabled, setWebcamEnabled] = useState(false);
   useEffect(() => {
@@ -99,9 +100,11 @@ function Interview() {
                 >
                   Enable Webcam and Microphone
                 </Button>
-                <Button className="text-sm px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg shadow-lg transition-all duration-200 font-medium">Start Interview</Button>
+                <Link href ={`/dashboard/interview/${interviewID}/start`}>
+                <Button className="text-sm px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-lg shadow-lg transition-all duration-200 font-medium" >Start Interview</Button>
+                </Link>
               </div>
-            </div>
+            </div>  
           )}
         </div>
       </div>
