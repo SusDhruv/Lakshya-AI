@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Lakshya AI – Your AI-Powered Interview Coach
 
-## Getting Started
+**Lakshya AI** is a modern, AI-powered mock interview platform designed to help you ace technical and behavioral interviews with confidence. Get personalized questions, real-time feedback, and detailed progress tracking — all in one sleek, responsive interface.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🎯 **AI-Generated Mock Interviews**  
+  Tailored questions based on your **job role**, **tech stack**, and **experience level**.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- ⚡ **Instant AI Feedback**  
+  Get real-time, actionable insights and ratings for each of your responses.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🎙️ **Speech-to-Text + Webcam Support**  
+  Practice like it's real — record responses and get comfortable answering out loud.
 
-## Learn More
+- 📈 **Progress Tracking**  
+  Review previous interviews, analyze feedback, and measure your growth over time.
 
-To learn more about Next.js, take a look at the following resources:
+- 🔐 **User Authentication (Clerk)**  
+  Secure sign-up/sign-in to protect your interview data.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 📱 **Responsive Dashboard**  
+  Manage your interviews from **any device**, anytime.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 🧼 **Modern UI**  
+  Clean, accessible, and optimized for all screen sizes.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠 Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- ⚙️ **Next.js 13+ (App Router)**
+- ⚛️ **React**
+- 🧑‍💼 **Clerk** (Authentication)
+- 💾 **Drizzle ORM + SQLite**
+- 🎨 **Tailwind CSS**
+- 🤖 **OpenAI/Gemini** (AI Feedback)
+- ▲ **Vercel** (Deployment)
+
+---
+
+## 🧑‍💻 Getting Started
+
+1. **Clone the repo**
+
+   ```bash
+   git clone https://github.com/yourusername/lakshya-ai.git
+   cd lakshya-ai
