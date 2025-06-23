@@ -41,10 +41,7 @@
 
 ---
 
-## 🧑‍💻 Getting Started
+## 🌐 Live Demo
 
-1. **Clone the repo**
+👉 [Visit Lakshya AI](https://lakshya-interview-ai.vercel.app)
 
-   ```bash
-   git clone https://github.com/yourusername/lakshya-ai.git
-   cd lakshya-ai
